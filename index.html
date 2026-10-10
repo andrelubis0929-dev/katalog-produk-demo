@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Awebstore — Katalog Digital</title>
+  <meta name="description" content="Demo katalog produk digital dan inspirasi kreatif Awebstore.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f8fc;
+      color: #18213b;
+    }
+    header {
+      background: #fff;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+    .logo { font-size: 23px; font-weight: 800; color: #5146e5; }
+    .tag { color: #777; font-size: 12px; }
+    .hero {
+      margin: 24px auto;
+      width: 90%;
+      padding: 32px 24px;
+      border-radius: 22px;
+      color: white;
+      background: linear-gradient(135deg, #24205f, #6559ee);
+    }
+    .hero h1 { font-size: 32px; margin: 0 0 12px; }
+    .hero p { line-height: 1.6; color: #e7e5ff; }
+    .search {
+      width: 90%;
+      margin: 24px auto;
+    }
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+    main { width: 90%; margin: auto; }
+    .filters {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 18px 0;
+    }
+    .filters button {
+      border: 0;
+      background: #e9e8ff;
+      color: #5146e5;
+      border-radius: 20px;
+      padding: 10px 14px;
+      cursor: pointer;
+    }
+    .filters button.active {
+      background: #5146e5;
+      color: white;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px #1720440c;
+    }
+    .art {
+      height: 115px;
+      display: grid;
+      place-items: center;
+      font-size: 43px;
+    }
+    .purple { background: #e8e5ff; }
+    .orange { background: #ffead8; }
+    .green { background: #dcf7e9; }
+    .blue { background: #dceeff; }
+    .info { padding: 13px; }
+    .category { color: #777; font-size: 11px; }
+    .info h3 { font-size: 15px; margin: 8px 0; }
+    .info p { color: #666; font-size: 12px; line-height: 1.5; }
+    .label {
+      display: inline-block;
+      background: #f0efff;
+      color: #5146e5;
+      padding: 6px 8px;
+      border-radius: 7px;
+      font-size: 11px;
+    }
+    .note {
+      margin: 25px 0;
+      padding: 15px;
+      background: #fff7df;
+      border-radius: 12px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #777;
+      font-size: 12px;
+    }
+    @media (min-width: 700px) {
+      .grid { grid-template-columns: repeat(4, 1fr); }
+      .hero h1 { font-size: 44px; }
+      .art { height: 160px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Awebstore.</div>
+    <div class="tag">DIGITAL CATALOG</div>
+  </header>
+
+  <section class="hero">
+    <p>SELAMAT DATANG DI AWEBSTORE</p>
+    <h1>Temukan inspirasi digitalmu.</h1>
+    <p>Jelajahi contoh produk digital, kreativitas, dan ide untuk bisnis online.</p>
+  </section>
+
+  <div class="search">
+    <input id="search" type="search"
+      placeholder="Cari produk..." aria-label="Cari produk">
+  </div>
+
+  <main>
+    <h2>Katalog pilihan</h2>
+    <p>Jelajahi koleksi demo kami.</p>
+
+    <div class="filters">
+      <button class="active" data-filter="all">Semua</button>
+      <button data-filter="desain">Desain</button>
+      <button data-filter="video">Video AI</button>
+      <button data-filter="template">Template</button>
+    </div>
+
+    <div class="grid" id="products">
+      <article class="card" data-category="desain">
+        <div class="art purple">🎨</div>
+        <div class="info">
+          <span class="category">DESAIN</span>
+          <h3>Social Media Kit</h3>
+          <p>Konsep visual untuk konten media sosial.</p>
+          <span class="label">Contoh demo</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="video">
+        <div class="art orange">🎬</div>
+        <div class="info">
+          <span class="category">VIDEO AI</span>
+          <h3>Promo Video Kit</h3>
+          <p>Inspirasi storyboard iklan produk pendek.</p>
+          <span class="label">Contoh demo</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="template">
+        <div class="art green">📋</div>
+        <div class="info">
+          <span class="category">TEMPLATE</span>
+          <h3>Content Planner</h3>
+          <p>Contoh perencanaan konten mingguan.</p>
+          <span class="label">Contoh demo</span>
+        </div>
+      </article>
+
+      <article class="card" data-category="desain">
+        <div class="art blue">📱</div>
+        <div class="info">
+          <span class="category">DESAIN</span>
+          <h3>Product Showcase</h3>
+          <p>Ide tampilan katalog produk yang modern.</p>
+          <span class="label">Contoh demo</span>
+        </div>
+      </article>
+    </div>
+
+    <p id="empty" hidden>Produk tidak ditemukan.</p>
+
+    <div class="note">
+      <strong>Catatan demo:</strong> Situs ini merupakan proyek portofolio.
+      Produk yang ditampilkan adalah contoh konsep, bukan penawaran
+      untuk transaksi atau produk yang sudah tersedia untuk dibeli.
+    </div>
+  </main>
+
+  <footer>© 2026 Awebstore · Proyek katalog digital demo</footer>
+
+  <script>
+    const search = document.getElementById('search');
+    const cards = [...document.querySelectorAll('.card')];
+    const buttons = [...document.querySelectorAll('[data-filter]')];
+    const empty = document.getElementById('empty');
+    let category = 'all';
+
+    function update() {
+      const query = search.value.toLowerCase();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const matchesCategory =
+          category === 'all' || card.dataset.category === category;
+        const matchesSearch = card.innerText.toLowerCase().includes(query);
+        const show = matchesCategory && matchesSearch;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+
+      empty.hidden = visible > 0;
+    }
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        category = button.dataset.filter;
+        buttons.forEach(item =>
+          item.classList.toggle('active', item === button)
+        );
+        update();
+      });
+    });
+
+    search.addEventListener('input', update);
+  </script>
+</body>
+  </html>
+  
